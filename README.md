@@ -11,7 +11,8 @@ https://github.com/stemkoski/AR-Examples
   - When all features will be ready you have to merge the development branch to the master.
 
 # Requirements for AR application
-There are three options to choose from. Option A:
+There are three options to choose from. 
+Option A:
   - Create a 3D model using Three.js and integrate into laboratory sample. 
   - 3D model must be complex structure made by you.
 
@@ -22,7 +23,7 @@ Option B:
 Option C:
   - It is your chance to show your skills and creativity.
   - You can add extra features to existing AR.js examples.
-  - Make different markers to controll video/audio player.
+  - Make different markers to control a video/audio player.
   - Or anything other.
   
 The general requirements for option A, B & C:
