@@ -12,6 +12,7 @@ https://github.com/stemkoski/AR-Examples
 
 # Requirements for AR application
 There are three options to choose from. 
+
 Option A:
   - Create a 3D model using Three.js and integrate into laboratory sample. 
   - 3D model must be complex structure made by you.
