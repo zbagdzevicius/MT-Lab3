@@ -1,4 +1,4 @@
-# mediaLab2
+# mediaLab3
 
 This lab aims to build your first Augmented Reality (AR) app.
 
@@ -33,7 +33,7 @@ The general requirements for option A, B & C:
   - SSL server is needed to run this lab material.
   - You will be needed to generate self signed sertificate and set up your web server. 
 You can try to use these file servers:  
-  - You can try to use Apache: https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md 
+  - Apache: https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md 
   - Tomcat: http://androidsrc.net/installing-tomcat8-raspberry-pi-3/ 
   - HFS: http://www.rejetto.com/hfs/ or any other server.
 Proxy http to https:
