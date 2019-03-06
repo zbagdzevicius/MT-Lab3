@@ -1,4 +1,4 @@
-# mediaLab3
+# MT-Lab3
 
 This lab aims to build your first Augmented Reality (AR) app.
 
