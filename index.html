@@ -124,33 +124,39 @@ function initialize()
 
 	markerRoot1.add( mesh1 );
 
-	// the inside of the hole
-	let geometry2	= new THREE.CubeGeometry(2,2,2);
-	let loader = new THREE.TextureLoader();
-	let texture = loader.load( 'images/tiles.jpg' );
-	let material2	= new THREE.MeshLambertMaterial({
-		transparent : true,
-		map: texture,
-		side: THREE.BackSide
-	});
 
-	mesh1 = new THREE.Mesh( geometry2, material2 );
-	mesh1.position.y = -1;
+	for (const coordinate of [1, 2, 3, 4, 5]) {
+        // the inside of the hole
+        let geometry2	= new THREE.CubeGeometry(coordinate,coordinate,coordinate);
+        let loader = new THREE.TextureLoader();
+        let texture = loader.load( 'images/tiles.jpg' );
+        let material2	= new THREE.MeshLambertMaterial({
+            transparent : true,
+            map: texture,
+            side: THREE.BackSide
+        });
 
-	markerRoot1.add( mesh1 );
+        mesh1 = new THREE.Mesh( geometry2, material2 );
+        mesh1.position.x = 2 * coordinate;
+        mesh1.position.y = -1 * coordinate;
 
-	// the invisibility cloak (box with a hole)
-	let geometry0 = new THREE.BoxGeometry(2,2,2);
-	geometry0.faces.splice(4, 2); // make hole by removing top two triangles
+        markerRoot1.add( mesh1 );
 
-	let material0 = new THREE.MeshBasicMaterial({
-		colorWrite: false
-	});
+		// the invisibility cloak (box with a hole)
+		let geometry0 = new THREE.BoxGeometry(coordinate,coordinate,coordinate);
+		geometry0.faces.splice(coordinate * 2, coordinate); // make hole by removing top two triangles
 
-	let mesh0 = new THREE.Mesh( geometry0, material0 );
-	mesh0.scale.set(1,1,1).multiplyScalar(1.01);
-	mesh0.position.y = -1;
-	markerRoot1.add(mesh0);
+		let material0 = new THREE.MeshBasicMaterial({
+			colorWrite: false
+		});
+
+		let mesh0 = new THREE.Mesh( geometry0, material0 );
+		mesh0.scale.set(coordinate/2, coordinate/2, coordinate/2).multiplyScalar(1.01);
+        mesh0.position.x = 2 * coordinate;
+		mesh0.position.y = -1 * coordinate;
+		markerRoot1.add(mesh0);
+	}
+
 }
 
 
