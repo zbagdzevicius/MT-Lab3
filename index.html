@@ -123,6 +123,7 @@
         markerRoot1.add(mesh1);
 
 
+        markerRoot2 = new THREE.Group();
         for (const coordinate of [1, 2, 3, 4, 5]) {
             // the inside of the hole
             let geometry2 = new THREE.CubeGeometry(coordinate, coordinate, coordinate);
@@ -138,7 +139,7 @@
             mesh1.position.x = 2 * coordinate;
             mesh1.position.y = -1 * coordinate;
 
-            markerRoot1.add(mesh1);
+            markerRoot2.add(mesh1);
 
             // the invisibility cloak (box with a hole)
             let geometry0 = new THREE.BoxGeometry(coordinate, coordinate, coordinate);
@@ -152,8 +153,12 @@
             mesh0.scale.set(coordinate / 2, coordinate / 2, coordinate / 2).multiplyScalar(1.01);
             mesh0.position.x = 2 * coordinate;
             mesh0.position.y = -1 * coordinate;
-            markerRoot1.add(mesh0);
+            markerRoot2.add(mesh0);
         }
+
+        let markerControls2 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
+            type: 'pattern', patternUrl: "data/letterA.patt",
+        })
 
     }
 
